@@ -55,6 +55,12 @@ RecordStore.prototype = {
     })
 
     return this.name + " has a balance of £" + this.balance/100 + " and an inventory value of £" + inventoryValue/100
+  },
+
+  getAllGenre: function(searchGenre){
+    return this.inventory.filter(function(record){
+      return record.genre === searchGenre
+    })
   }
 
 

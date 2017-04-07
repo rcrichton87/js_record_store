@@ -13,7 +13,7 @@ describe("Record Store", function(){
     record1 = new Record("Perturbator", "The Uncanny Valley", "Electronic" , 1099)
     record2 = new Record("Iron Maiden", "Powerslave", "Metal", 799)
     record3 = new Record("Perturbator", "The Uncanny Valley", "Electronic" , 1099)
-
+    record4 = new Record("Black Sabath", "Paranoid", "Metal", 999)
   })
 
   it("has a name", function(){
@@ -62,6 +62,14 @@ describe("Record Store", function(){
     recordStore.sellRecord(record2)
     var expected = "Ross' Records has a balance of £7.99 and an inventory value of £21.98"
     assert.strictEqual(expected, recordStore.financialSituation())
+  })
+
+  it("can view all records of a particular genre", function(){
+    recordStore.addRecord(record1)
+    recordStore.addRecord(record2)
+    recordStore.addRecord(record3)
+    recordStore.addRecord(record4)
+    assert.deepEqual([record2, record4], recordStore.getAllGenre("Metal"))
   })
 
 })
