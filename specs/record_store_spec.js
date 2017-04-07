@@ -12,6 +12,8 @@ describe("Record Store", function(){
     recordStore = new RecordStore("Ross' Records", "Edinburgh")
     record1 = new Record("Perturbator", "The Uncanny Valley", "Electronic" , 1099)
     record2 = new Record("Iron Maiden", "Powerslave", "Metal", 799)
+    record3 = new Record("Perturbator", "The Uncanny Valley", "Electronic" , 1099)
+
   })
 
   it("has a name", function(){
@@ -35,8 +37,12 @@ describe("Record Store", function(){
     assert.deepEqual([record1], recordStore.inventory)
   })
 
-  
-
-  it("can get t")
+  it("can list the inventory", function(){
+    recordStore.addRecord(record1)
+    recordStore.addRecord(record2)
+    recordStore.addRecord(record3)
+    var expected = "Perturbator - The Uncanny Valley - 2 copies, Iron Maiden - Powerslave - 1 copy"
+    assert.strictEqual(expected, recordStore.listInventory())
+  })
 
 })
