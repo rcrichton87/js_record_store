@@ -49,6 +49,12 @@ Customer.prototype = {
       }
     })
     return mostValuable
+  },  
+
+  sortByAscendingValue: function(){
+    this.collection.sort(function(record1, record2){
+      return record2.price - record1.price
+    })
   }
 }
 
