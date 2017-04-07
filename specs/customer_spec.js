@@ -15,4 +15,8 @@ describe("Customer", function(){
     assert.strictEqual("Ross", customer1.name)
   })
 
+  it("should start with an empty collection", function(){
+    assert.strictEqual(0, customer1.collection.length)
+  })
+
 })
