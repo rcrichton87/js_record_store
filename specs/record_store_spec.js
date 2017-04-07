@@ -7,6 +7,8 @@ describe("Record Store", function(){
   var recordStore
   var record1
   var record2
+  var record3
+  var record4
 
   beforeEach(function(){
     recordStore = new RecordStore("Ross' Records", "Edinburgh")
