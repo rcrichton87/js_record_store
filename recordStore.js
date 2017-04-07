@@ -16,7 +16,7 @@ RecordStore.prototype = {
     var inventoryObject = {}
     this.inventory.forEach(function(record){
       var inventoryKey = record.artist + " - " + record.title
-      if(inventoryObject[inventoryKey] !== undefined){
+      if(inventoryObject[inventoryKey]){
         inventoryObject[inventoryKey]++
       } else {
         inventoryObject[inventoryKey] = 1
@@ -40,7 +40,15 @@ RecordStore.prototype = {
       }
     })
     return inventoryString
+  },
+
+  sellRecord: function(record){
+    var index = this.inventory.indexOf(record)
+    this.inventory.splice(index, 1)
+    this.balance += record.price
   }
+
+
   
 }
 

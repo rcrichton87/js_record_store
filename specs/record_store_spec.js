@@ -45,4 +45,14 @@ describe("Record Store", function(){
     assert.strictEqual(expected, recordStore.listInventory())
   })
 
+  it("can sell a record, removing it from the inventory and adding funds to the balance", function(){
+    recordStore.addRecord(record1)
+    recordStore.addRecord(record2)
+    recordStore.addRecord(record3)
+    recordStore.sellRecord(record2)
+    assert.strictEqual(2, recordStore.inventory.length)
+
+    assert.strictEqual(799, recordStore.balance)
+  })
+
 })
