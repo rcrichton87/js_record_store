@@ -9,10 +9,6 @@ RecordStore.prototype = {
   addRecord: function(record){
     this.inventory.push(record)
   },
-
-  getDetails: function(){
-    return this.name + " in " + this.city + " has a balance of " + this.balance + " and " + this.inventory.length + " records in stock"
-  }
 }
 
 

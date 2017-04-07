@@ -35,11 +35,8 @@ describe("Record Store", function(){
     assert.deepEqual([record1], recordStore.inventory)
   })
 
-  it("can get details as a string", function(){
-    recordStore.addRecord(record1)
-    recordStore.addRecord(record2)
-    var expected = "Ross' Records in Edinburgh has a balance of 0 and 2 records in stock"
-    assert.strictEqual(expected, recordStore.getDetails())
-  })
+  
+
+  it("can get t")
 
 })

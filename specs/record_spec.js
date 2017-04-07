@@ -25,4 +25,9 @@ describe("Record", function(){
     assert.strictEqual(1099, record.price)
   })
 
+  it("can get details as a string", function(){
+    var expected = "Perturbator - The Uncanny Valley - Electronic - £10.99"
+    assert.strictEqual(expected, record.printDetails())
+  })
+
 })
