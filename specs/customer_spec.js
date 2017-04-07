@@ -26,7 +26,7 @@ describe("Customer", function(){
     recordStore.addRecord(record1)
     recordStore.addRecord(record2)
     recordStore.addRecord(record3)
-    recordStore.addRecord(record4)
+    recordStore.addRecord(record4) 
   })
 
   it("should have a name", function(){
@@ -125,6 +125,16 @@ describe("Customer", function(){
     customer1.collection.push(record5)
     customer1.sortByAscendingValue()
     assert.deepEqual([record2, record5, record4, record1, record3], customer1.collection)
+  })
+
+  it("should be able to compare the value of it's collection with another collector", function(){
+    customer1.collection.push(record1)
+    customer1.collection.push(record3)
+    customer1.collection.push(record5)
+    customer2.collection.push(record2)
+    customer2.collection.push(record4)
+    assert.strictEqual(1299, customer1.compareCollectionWith(customer2))
+    
   })
 
 })

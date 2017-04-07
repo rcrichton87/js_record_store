@@ -61,6 +61,10 @@ Customer.prototype = {
     this.collection.sort(function(record1, record2){
       return record1.price - record2.price
     })
+  },
+
+  compareCollectionWith: function(otherCustomer){
+    return this.collectionValue() - otherCustomer.collectionValue()
   }
 }
 
