@@ -66,4 +66,15 @@ describe("Customer", function(){
     assert.strictEqual(3099, customer1.cash)
   })
 
+  it("can't sell a record it deosn't have", function(){
+    customer1.cash = 2000
+    customer1.collection.push(record1)
+    customer1.collection.push(record2)
+    customer1.collection.push(record3)
+    customer1.collection.push(record4)
+    customer1.sellRecord(record5)
+    assert.strictEqual(4, customer1.collection.length)
+    assert.strictEqual(2000, customer1.cash)
+  })
+
 })
