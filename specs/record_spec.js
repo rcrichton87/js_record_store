@@ -21,4 +21,8 @@ describe("Record", function(){
     assert.strictEqual("Electronic", record.genre)
   })
 
+  it("has a price", function(){
+    assert.strictEqual(1099, record.price)
+  })
+
 })
