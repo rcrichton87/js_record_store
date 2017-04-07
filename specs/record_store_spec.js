@@ -55,4 +55,13 @@ describe("Record Store", function(){
     assert.strictEqual(799, recordStore.balance)
   })
 
+  it("can report the financial situation", function(){
+    recordStore.addRecord(record1)
+    recordStore.addRecord(record2)
+    recordStore.addRecord(record3)
+    recordStore.sellRecord(record2)
+    var expected = "Ross' Records has a balance of £7.99 and an inventory value of £21.98"
+    assert.strictEqual(expected, recordStore.financialSituation())
+  })
+
 })

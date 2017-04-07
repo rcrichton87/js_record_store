@@ -46,6 +46,15 @@ RecordStore.prototype = {
     var index = this.inventory.indexOf(record)
     this.inventory.splice(index, 1)
     this.balance += record.price
+  },
+
+  financialSituation: function(){
+    var inventoryValue = 0
+    this.inventory.forEach(function(record){
+      inventoryValue += record.price
+    })
+
+    return this.name + " has a balance of £" + this.balance/100 + " and an inventory value of £" + inventoryValue/100
   }
 
 
