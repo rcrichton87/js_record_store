@@ -17,4 +17,8 @@ describe("Record Store", function(){
     assert.strictEqual("Edinburgh", recordStore.city)
   })
 
+  it("begins with an empty inventory", function(){
+    assert.strictEqual(0, recordStore.inventory.length)
+  })
+
 })
