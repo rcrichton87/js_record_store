@@ -17,4 +17,8 @@ describe("Record", function(){
     assert.strictEqual("The Uncanny Valley", record.title)
   })
 
+  it("has a genre", function(){
+    assert.strictEqual("Electronic", record.genre)
+  })
+
 })
