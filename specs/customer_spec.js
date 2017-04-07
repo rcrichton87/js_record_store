@@ -107,6 +107,16 @@ describe("Customer", function(){
     assert.deepEqual(record1, customer1.mostValuableRecord())
   })
 
+  it("can sort it's records by descending value", function(){
+    customer1.collection.push(record1)
+    customer1.collection.push(record2)
+    customer1.collection.push(record3)
+    customer1.collection.push(record4)
+    customer1.collection.push(record5)
+    customer1.sortByDescendingValue()
+    assert.deepEqual([record1, record3, record4, record5, record2], customer1.collection)
+  })
+
   it("can sort it's records by ascending value", function(){
     customer1.collection.push(record1)
     customer1.collection.push(record2)
@@ -114,7 +124,7 @@ describe("Customer", function(){
     customer1.collection.push(record4)
     customer1.collection.push(record5)
     customer1.sortByAscendingValue()
-    assert.deepEqual([record1, record3, record4, record5, record2], customer1.collection)
+    assert.deepEqual([record2, record5, record4, record1, record3], customer1.collection)
   })
 
 })
