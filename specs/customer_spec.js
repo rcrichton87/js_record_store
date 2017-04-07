@@ -22,6 +22,7 @@ describe("Customer", function(){
     record2 = new Record("Iron Maiden", "Powerslave", "Metal", 799)
     record3 = new Record("Perturbator", "The Uncanny Valley", "Electronic" , 1099)
     record4 = new Record("Black Sabath", "Paranoid", "Metal", 999)
+    record5 = new Record("Daft Punk", "Discovery", "Electronic", 899)
     recordStore.addRecord(record1)
     recordStore.addRecord(record2)
     recordStore.addRecord(record3)
@@ -45,6 +46,13 @@ describe("Customer", function(){
     customer1.buyRecord(recordStore, record1)
     assert.deepEqual([record1], customer1.collection)
     assert.strictEqual(901, customer1.cash)
+  })
+
+  it("can't buy a record the store doesn't have", function(){
+    customer1.cash = 2000
+    customer1.buyRecord(recordStore, record5)
+    assert.strictEqual(0, customer1.collection.length)
+    assert.strictEqual(2000, customer1.cash)
   })
 
   it("should be able to sell records", function(){
