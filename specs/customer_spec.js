@@ -19,4 +19,8 @@ describe("Customer", function(){
     assert.strictEqual(0, customer1.collection.length)
   })
 
+  it("should start with 0 cash", function(){
+    assert.strictEqual(0, customer1.cash)
+  })
+
 })
