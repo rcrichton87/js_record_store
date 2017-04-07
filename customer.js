@@ -21,9 +21,19 @@ Customer.prototype = {
     }
   },
 
-  collectionValue: function(){
+  collectionValue: function(genre){
     var totalValue = 0
-    this.collection.forEach(function(record){
+    var filteredCollection = []
+
+    if (genre){
+      filteredCollection = this.collection.filter(function(record){
+        return record.genre === genre
+      })
+    } else {
+      filteredCollection = this.collection
+    }
+
+    filteredCollection.forEach(function(record){
       totalValue += record.price
     })
     return totalValue
