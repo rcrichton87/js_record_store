@@ -99,4 +99,12 @@ describe("Customer", function(){
     assert.strictEqual(1798, customer1.collectionValue("Metal"))
   })
 
+  it("can view it's most valuable record", function(){
+    customer1.collection.push(record1)
+    customer1.collection.push(record2)
+    customer1.collection.push(record3)
+    customer1.collection.push(record4)
+    assert.deepEqual(record1, customer1.mostValuableRecord())
+  })
+
 })

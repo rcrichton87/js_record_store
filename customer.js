@@ -37,6 +37,18 @@ Customer.prototype = {
       totalValue += record.price
     })
     return totalValue
+  },
+
+  mostValuableRecord: function(){
+    var mostValuable
+    var highestPrice = 0
+    this.collection.forEach(function(record){
+      if (record.price > highestPrice) {
+        highestPrice = record.price
+        mostValuable = record
+      }
+    })
+    return mostValuable
   }
 }
 
