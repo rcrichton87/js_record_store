@@ -13,4 +13,8 @@ describe("Record", function(){
     assert.strictEqual("Perturbator", record.artist)
   })
 
+  it("has a title", function(){
+    assert.strictEqual("The Uncanny Valley", record.title)
+  })
+
 })
