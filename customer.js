@@ -19,6 +19,14 @@ Customer.prototype = {
       index = this.collection.indexOf(record)
       this.collection.splice(index, 1)
     }
+  },
+
+  collectionValue: function(){
+    var totalValue = 0
+    this.collection.forEach(function(record){
+      totalValue += record.price
+    })
+    return totalValue
   }
 }
 

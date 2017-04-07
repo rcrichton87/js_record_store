@@ -83,4 +83,12 @@ describe("Customer", function(){
     assert.strictEqual(2000, customer1.cash)
   })
 
+  it("can view the value of it's collection", function(){
+    customer1.collection.push(record1)
+    customer1.collection.push(record2)
+    customer1.collection.push(record3)
+    customer1.collection.push(record4)
+    assert.strictEqual(3996, customer1.collectionValue())
+  })
+
 })
