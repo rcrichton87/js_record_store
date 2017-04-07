@@ -13,4 +13,8 @@ describe("Record Store", function(){
     assert.strictEqual("Ross' Records", recordStore.name)
   })
 
+  it("has a city", function(){
+    assert.strictEqual("Edinburgh", recordStore.city)
+  })
+
 })
