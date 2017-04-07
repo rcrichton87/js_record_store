@@ -55,6 +55,12 @@ describe("Customer", function(){
     assert.strictEqual(2000, customer1.cash)
   })
 
+  it("can't buy a record it can't afford", function(){
+    customer1.buyRecord(recordStore, record1)
+    assert.strictEqual(0, customer1.collection.length)
+    assert.strictEqual(0, customer1.cash)
+  })
+
   it("should be able to sell records", function(){
     customer1.cash = 2000
     customer1.collection.push(record1)

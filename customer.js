@@ -6,7 +6,7 @@ var Customer = function(name){
 
 Customer.prototype = {
   buyRecord: function(recordStore, record){
-    if(recordStore.inventory.includes(record)){
+    if(recordStore.inventory.includes(record) && this.cash >= record.price){
       recordStore.sellRecord(record)
       this.cash -= record.price
       this.collection.push(record)
