@@ -11,6 +11,14 @@ Customer.prototype = {
       this.cash -= record.price
       this.collection.push(record)
     }
+  },
+
+  sellRecord: function(record){
+    if(this.collection.includes(record)){
+      this.cash += record.price
+      index = this.collection.indexOf(record)
+      this.collection.splice(index, 1)
+    }
   }
 }
 

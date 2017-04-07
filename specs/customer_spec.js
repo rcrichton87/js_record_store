@@ -47,4 +47,15 @@ describe("Customer", function(){
     assert.strictEqual(901, customer1.cash)
   })
 
+  it("should be able to sell records", function(){
+    customer1.cash = 2000
+    customer1.collection.push(record1)
+    customer1.collection.push(record2)
+    customer1.collection.push(record3)
+    customer1.collection.push(record4)
+    customer1.sellRecord(record1)
+    assert.deepEqual([record2, record3, record4], customer1.collection)
+    assert.strictEqual(3099, customer1.cash)
+  })
+
 })
